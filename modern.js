@@ -34,3 +34,65 @@ const newArr =[
 const active = newArr.filter(job => job.isActive )
 console.log(active);
 
+//Arrow and this keyword 
+
+//arrow function not rebind this
+
+const per1 ={
+    talks(){
+        var self = this;
+        setTimeout(function() {  console.log('self',self)},1000 )
+     
+    }
+}
+console.log(per1);
+
+//array.map
+
+const colors= ['red','blue','green'];
+
+ const color = colors.map(color => `<li>${color}</li>`);
+ 
+
+ console.log(color);
+
+ //spread operator
+
+ const con = [1,2,3];
+ const con2 = [5,6,7];
+ //const combined = con.concat(con2);
+ //console.log(combined);
+ 
+ //In ES6 we have another option
+
+ const com =[...con,4,...con2,'abc'];
+ console.log(com)
+
+ //we can use this spread operator (...)to object
+
+ const first = {
+     name :'Praveen',
+
+ }
+
+ const second = {job : 'instructor'}
+
+ const combined = {...first,...second,locations :'bangalore'};
+ console.log(combined);
+
+ //classs
+
+ class Job {
+     constructor(name){ 
+        return  this.name = name;
+     }
+
+    work(){
+      console.log('work');
+    }
+ }
+
+ const job2= new Job('praveen');
+console.log(job2.name) 
+console.log(job2.work) 
+ 
